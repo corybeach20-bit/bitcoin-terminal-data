@@ -1,0 +1,37 @@
+name: Daily data snapshot
+on:
+  schedule:
+    - cron: '17 5 * * *' # once a day
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180 # the free data plan allows 10 requests/hour, so the script paces itself
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check out the data branch (created on the first run)
+        run: |
+          git fetch origin data:data 2>/dev/null || true
+          if git show-ref --verify --quiet refs/heads/data; then
+            git worktree add out data
+          else
+            git worktree add --detach out
+            (cd out && git checkout --orphan data && git rm -rf . >/dev/null)
+          fi
+      - name: Fetch the data
+        run: node tools/snapshot/snapshot.mjs out
+        env:
+          BG_TOKEN: ${{ secrets.BG_TOKEN }} # optional: only if you have a paid or registered token
+      - name: Publish
+        run: |
+          cd out
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Data snapshot $(date -u +%F)" || echo "nothing changed"
+          git push origin data
