@@ -1,0 +1,70 @@
+{
+ "updated": "2026-11-12T12:01:55.985Z",
+ "endpoints": {
+  "balance-addr-1-BTC": {
+   "updated": "2026-11-12T10:43:46.255Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "balance-addr-10-1-BTC": {
+   "updated": "2026-11-12T10:50:17.100Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "balance-addr-100-10-BTC": {
+   "updated": "2026-11-12T10:56:47.958Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "balance-addr-1K-100-BTC": {
+   "updated": "2026-11-12T11:03:18.710Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "balance-addr-10K-1K-BTC": {
+   "updated": "2026-11-12T11:09:49.554Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "balance-addr-10K-BTC": {
+   "updated": "2026-11-12T11:16:20.296Z",
+   "rows": 1437,
+   "last": "2026-11-11"
+  },
+  "hodl-waves-supply": {
+   "updated": "2026-11-12T11:22:51.434Z",
+   "rows": 1461,
+   "last": "2026-11-11"
+  },
+  "utxos-in-profit-pct": {
+   "updated": "2026-11-12T11:29:22.182Z",
+   "rows": 1436,
+   "last": "2026-11-11"
+  },
+  "utxos-in-loss-pct": {
+   "updated": "2026-11-12T11:35:52.880Z",
+   "rows": 1461,
+   "last": "2026-11-11"
+  },
+  "lth-realized-price": {
+   "updated": "2026-11-12T11:42:23.643Z",
+   "rows": 1446,
+   "last": "2026-11-05"
+  },
+  "sth-realized-price": {
+   "updated": "2026-11-12T11:48:54.492Z",
+   "rows": 1446,
+   "last": "2026-11-05"
+  },
+  "realized-price": {
+   "updated": "2026-11-12T11:55:25.221Z",
+   "rows": 1455,
+   "last": "2026-11-05"
+  },
+  "terminal-price": {
+   "updated": "2026-11-12T12:01:55.985Z",
+   "rows": 1454,
+   "last": "2026-11-11"
+  }
+ }
+}
